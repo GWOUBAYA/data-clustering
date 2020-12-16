@@ -63,14 +63,15 @@ namespace Data_Clustering_LIB
         #endregion
 
         #region Method
-        public void calcDistance(Iris clusterInput)
+        public void calcDistance(Centroid clusterInput)
         {
             /*perhitungan distance square untuk mencari cluster*/
             double sLength, sWidth, pLength, pWidth;
-            sLength = Math.Pow((SepalL - clusterInput.SepalL), 2.0);
-            sWidth = Math.Pow((SepalW - clusterInput.SepalW), 2.0);
-            pLength = Math.Pow((PetalL - clusterInput.PetalL), 2.0);
-            pWidth = Math.Pow((PetalW - clusterInput.PetalW), 2.0);
+            sLength = Math.Pow((SepalL - clusterInput.F1), 2.0);
+            sWidth = Math.Pow((SepalW - clusterInput.F2
+                ), 2.0);
+            pLength = Math.Pow((PetalL - clusterInput.F3), 2.0);
+            pWidth = Math.Pow((PetalW - clusterInput.F4), 2.0);
 
             double newDistSq = sLength + sWidth + pLength + pWidth;
 
@@ -79,6 +80,7 @@ namespace Data_Clustering_LIB
             if (newDistSq != 0 || distanceSquare > newDistSq)
             {
                 DistanceSquare = newDistSq;
+                centroid = clusterInput;
             }
         }
         #endregion

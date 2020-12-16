@@ -77,32 +77,11 @@ namespace Data_Clustering
                 {
                     string[] fields = csvParser.ReadFields();
 
-                    // Iris iris = new Iris(
-                    //     Convert.ToDouble(fields[1]),
-                    //     Convert.ToDouble(fields[2]),
-                    //     Convert.ToDouble(fields[3]),
-                    //     Convert.ToDouble(fields[4]));
-
-
-
                     Iris iris = new Iris(
                          double.Parse(fields[1]),
                          double.Parse(fields[2]),
                          double.Parse(fields[3]),
                          double.Parse(fields[4]));
-
-                    // Iris iris = new Iris(
-                    //     fields[1],
-                    //     fields[2],
-                    //     fields[3],
-                    //     fields[4]);
-
-                    //Iris iris = new Iris(
-                    //    double.Parse(fields[1].Replace('.', ',')),
-                    //    double.Parse(fields[2].Replace('.', ',')),
-                    //    double.Parse(fields[3].Replace('.', ',')),
-                    //    double.Parse(fields[4].Replace('.', ',')));
-
 
                     listOfIris.Add(iris);
 
@@ -111,30 +90,7 @@ namespace Data_Clustering
             }
         }
 
-        private void buttonShow_Click(object sender, EventArgs e)
-        {
-            
-            //button untuk menampilkan dataset Iris kedalam DataGridView
-            //try
-            //{
-            //    dataGridViewDataCluster.DataSource = null;
-            //    if (open.FileName != "")
-            //    {
-            //        if (listOfIris.Count > 0)
-            //        {
-            //            dataGridViewDataCluster.DataSource = listOfIris;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("File Kosong", "Error");
-            //    }
-            //}
-            //catch (Exception error)
-            //{
-            //    MessageBox.Show("Tidak Bisa Menampilkan File. Pesan Error: " + error, "Error");
-            //}
-        }
+       
 
         #region properti
         private void lengthToolStripMenuItem_Click(object sender, EventArgs e)
@@ -244,16 +200,6 @@ namespace Data_Clustering
 
       
 
-        private void buttonCoba_Click_1(object sender, EventArgs e)
-        {
-            string path = @"C:\Users\Golden\Documents\PBD\data-clustering\Iris Dataset\Iris.csv";
-            CsvParse(path);
-           if(listOfIris.Count > 0)
-            {
-                MessageBox.Show(listOfIris.Count.ToString());
-            }
-
-        }
 
        
 
@@ -410,6 +356,11 @@ namespace Data_Clustering
             }
 
             return small;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
